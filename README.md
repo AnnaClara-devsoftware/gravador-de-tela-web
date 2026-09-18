@@ -2,7 +2,7 @@
 
 Aplicação web full-stack para gravar tela, microfone e webcam diretamente do navegador, sem instalar nada. Projeto de portfólio focado em backend, com frontend em React/TypeScript e um backend Node/Express/PostgreSQL com propósito real (contas, sincronização e compartilhamento), não decorativo.
 
-Esse site resolve um problema real que muitas pessoas com computadores fracos tem. O objetivo é fazer com que o usuário do PC fraco não precise instalar nada em seu computador, porém sem perder o benefício de gravar a tela.
+O projeto foi pensado para reduzir a necessidade de instalação de softwares de gravação, permitindo que o processamento da captura aconteça diretamente no navegador. Isso é especialmente útil em dispositivos com pouco espaço em disco ou em ambientes nos quais o usuário não pode instalar aplicações.
 
 **A gravação em si acontece 100% no navegador.** Nenhum frame de vídeo passa pelo backend a menos que o usuário ative explicitamente o backup em nuvem (recurso opcional).
 
@@ -30,7 +30,7 @@ Esse site resolve um problema real que muitas pessoas com computadores fracos te
 
 ## Demonstração
 
-A aplicação tem três áreas principais:
+A aplicação tem quatro áreas principais:
 
 1. **Landing page** (`/`) — apresentação do produto, como funciona, recursos, privacidade e stack.
 2. **Gravar** (`/gravar`) — tela de configuração e gravação (qualidade, microfone, webcam, áudio do sistema).
