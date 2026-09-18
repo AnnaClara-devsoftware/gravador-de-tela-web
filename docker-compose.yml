@@ -1,0 +1,25 @@
+# Sobe um PostgreSQL local para desenvolvimento do backend.
+# Uso: docker compose up -d
+# String de conexão resultante (já é o padrão em backend/.env.example):
+#   postgres://gravador:gravador@localhost:5432/gravador_de_tela
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gravador
+      POSTGRES_PASSWORD: gravador
+      POSTGRES_DB: gravador_de_tela
+    ports:
+      - "5432:5432"
+    volumes:
+      - gravador_de_tela_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gravador -d gravador_de_tela"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  gravador_de_tela_postgres_data:

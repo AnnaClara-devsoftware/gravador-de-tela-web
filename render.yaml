@@ -1,0 +1,33 @@
+# Render Blueprint — permite criar o serviço com "New > Blueprint" no
+# dashboard do Render, apontando para este repositório, em vez de
+# preencher cada campo manualmente. DATABASE_URL e JWT_SECRET continuam
+# sendo preenchidos por você (não ficam no código) — o Render pede isso
+# na hora de aplicar o blueprint, já que estão marcados como "sync: false".
+#
+# Documentação: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: gravador-de-tela-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    region: oregon
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: npm run migrate:up && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: MAX_UPLOAD_BYTES
+        value: "524288000"
+      - key: SHARE_LINK_TTL_HOURS
+        value: "72"
