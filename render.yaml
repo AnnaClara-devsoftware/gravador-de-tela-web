@@ -13,7 +13,7 @@ services:
     rootDir: backend
     plan: free
     region: oregon
-    buildCommand: npm install --legacy-peer-deps && npm run build
+    buildCommand: npm install --legacy-peer-deps --include=dev && npm run build
     startCommand: npm run migrate:up && npm start
     healthCheckPath: /health
     envVars:
