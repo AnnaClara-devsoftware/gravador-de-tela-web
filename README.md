@@ -1,6 +1,8 @@
 # Gravador de Tela
 
-Aplicação web full-stack para gravar tela, microfone e webcam diretamente do navegador — sem instalar nada. Projeto de portfólio focado em Engenharia de Software (backend), com frontend em React/TypeScript e um backend Node/Express/PostgreSQL com propósito real (contas, sincronização e compartilhamento), não decorativo.
+Aplicação web full-stack para gravar tela, microfone e webcam diretamente do navegador, sem instalar nada. Projeto de portfólio focado em backend, com frontend em React/TypeScript e um backend Node/Express/PostgreSQL com propósito real (contas, sincronização e compartilhamento), não decorativo.
+
+Esse site resolve um problema real que muitas pessoas com computadores fracos tem. O objetivo é fazer com que o usuário do PC fraco não precise instalar nada em seu computador, porém sem perder o benefício de gravar a tela.
 
 **A gravação em si acontece 100% no navegador.** Nenhum frame de vídeo passa pelo backend a menos que o usuário ative explicitamente o backup em nuvem (recurso opcional).
 
